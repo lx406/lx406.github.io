@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>@vue/test-utils | Xiang&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.35bcedcf.css" as="style"><link rel="preload" href="/assets/js/app.edd0e32f.js" as="script"><link rel="preload" href="/assets/js/2.6ad20504.js" as="script"><link rel="preload" href="/assets/js/17.0a5440b4.js" as="script"><link rel="prefetch" href="/assets/js/10.83ad3917.js"><link rel="prefetch" href="/assets/js/11.ce94b172.js"><link rel="prefetch" href="/assets/js/12.7e578634.js"><link rel="prefetch" href="/assets/js/13.fc3d457f.js"><link rel="prefetch" href="/assets/js/14.163e86a2.js"><link rel="prefetch" href="/assets/js/15.f3f5df27.js"><link rel="prefetch" href="/assets/js/16.d6352424.js"><link rel="prefetch" href="/assets/js/18.87707989.js"><link rel="prefetch" href="/assets/js/3.4f772477.js"><link rel="prefetch" href="/assets/js/4.a04b886e.js"><link rel="prefetch" href="/assets/js/5.cf097153.js"><link rel="prefetch" href="/assets/js/6.9e2bed46.js"><link rel="prefetch" href="/assets/js/7.5f808fab.js"><link rel="prefetch" href="/assets/js/8.3da66210.js"><link rel="prefetch" href="/assets/js/9.bff0ee0e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35bcedcf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/qianduaner.jpeg" alt="Xiang's Blog" class="logo"> <span class="site-name can-hide">Xiang's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/pages/es6/symbol.html" class="nav-link">
+  es6
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="test menu" class="dropdown-title"><span class="title">test</span> <span class="arrow down"></span></button> <button type="button" aria-label="test menu" class="mobile-dropdown-title"><span class="title">test</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/test/test.html" class="nav-link">
+  test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/unitTest.html" class="nav-link">
+  unit test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/test-utils.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  @vue/test-utils
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/tdd.html" class="nav-link">
+  tdd
+</a></li></ul></div></div><div class="nav-item"><a href="/pages/browser/浏览器工作原理.html" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/pages/algorithm/stableSort.html" class="nav-link">
+  algorithm
+</a></div><div class="nav-item"><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/pages/es6/symbol.html" class="nav-link">
+  es6
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="test menu" class="dropdown-title"><span class="title">test</span> <span class="arrow down"></span></button> <button type="button" aria-label="test menu" class="mobile-dropdown-title"><span class="title">test</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/test/test.html" class="nav-link">
+  test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/unitTest.html" class="nav-link">
+  unit test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/test-utils.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  @vue/test-utils
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/tdd.html" class="nav-link">
+  tdd
+</a></li></ul></div></div><div class="nav-item"><a href="/pages/browser/浏览器工作原理.html" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/pages/algorithm/stableSort.html" class="nav-link">
+  algorithm
+</a></div><div class="nav-item"><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/pages/test/test.html" class="sidebar-link">单元测试</a></li><li><a href="/pages/test/unitTest.html" class="sidebar-link">单元测试原则</a></li><li><a href="/pages/test/test-utils.html" aria-current="page" class="active sidebar-link">@vue/test-utils</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/test/test-utils.html#vue-test-utils" class="sidebar-link">@vue/test-utils</a></li></ul></li><li><a href="/pages/test/tdd.html" class="sidebar-link">tdd导览</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="vue-test-utils"><a href="#vue-test-utils" class="header-anchor">#</a> @vue/test-utils</h2> <p>Vue Test Utils 是 Vue.js 官方的单元测试实用工具库。</p> <h3 id="浅渲染"><a href="#浅渲染" class="header-anchor">#</a> 浅渲染</h3> <p>shallowMount提供一种浅渲染的能力。我们知道，单元测试专注于独立组件的测试，不希望测试的同时涉及到子组件的功能，所以浅渲染帮助我们只渲染该组件的dom，而不渲染子组件。</p> <div class="language- extra-class"><pre class="language-text"><code>import { shallowMount } from '@vue/test-utils'
+
+const wrapper = shallowMount(Component)
+wrapper.vm // 挂载的 Vue 实例
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>/**
+ * AppButton组件
+ * 单元测试内容包括以下
+ * props
+ * computed
+ * func
+ * $emit
+ * slots（普通插槽和命名插槽）
+ * DOM测试
+ */
+import { shallowMount } from '@vue/test-utils'
+import AppButton from '@/basics/AppButton.vue'
+
+describe('AppButton.vue', () =&gt; {
+  /**
+   * 每个it测试一个小项目
+   * 为了便于理解所以注释较多，实际测试代码中酌情增减
+  */
+
+  // 测试内容：props
+  // 自定义props传递给AppButton组件，判断组件有获取到props
+  it('props test', () =&gt; {
+    const buttonProps = {
+      type: 'danger',
+      size: 'lg',
+      disabled: true
+    }
+    const wrapper = shallowMount(AppButton, {
+      propsData: buttonProps
+    })
+    // 断言已经获取到props
+    expect(wrapper.props().size).toBe('lg')
+    expect(wrapper.props().type).toBe('danger')
+    expect(wrapper.props().disabled).toBe(true)
+    // 每个it最后都应该销毁wrapper
+    wrapper.destroy()
+  })
+
+  // 测试内容：computed(要注意计算属性不是函数，是变量，测试时很容易看着组件内写法按照函数测试)
+  // 改变props的type，size，disable值时，cssClasses的值也会跟着改变
+  it('computed test', () =&gt; {
+    const wrapper = shallowMount(AppButton)
+    // 设置props 断言computed计算属性（注意props有default值）
+    wrapper.setProps({ type: 'danger' })
+    expect(wrapper.vm.cssClasses).toBe('app-button app-button--md app-button--danger')
+    wrapper.setProps({ size: 'lg' })
+    expect(wrapper.vm.cssClasses).toBe('app-button app-button--lg app-button--danger')
+    wrapper.setProps({ disabled: true })
+    expect(wrapper.vm.cssClasses).toBe('app-button app-button--lg app-button--disabled')
+
+    wrapper.destroy()
+  })
+
+  // 测试内容：func测试
+  // 点击按钮组件时，正确触发点击事件
+  it('click button onClick is clled', () =&gt; {
+    const wrapper = shallowMount(AppButton)
+    // 创建mock函数
+    const mockFn = jest.fn()
+    // 设置 Wrapper vm 的方法并强制更新。
+    wrapper.setMethods({
+      onClick: mockFn
+    })
+    // 获取buttonDOM元素
+    const button = wrapper.find('button')
+    // 测试点击按钮后有没有正确触发函数
+    // 点击按钮
+    button.trigger('click')
+    // 断言函数被触发，且被触发一次
+    expect(mockFn).toBeCalled()
+    expect(mockFn).toHaveBeenCalledTimes(1)
+
+    wrapper.destroy()
+  })
+
+  // 测试内容：$emit
+  // 函数被触发后，emit的函数也会被触发
+  it('when onClick is called $emit is called', () =&gt; {
+    const wrapper = shallowMount(AppButton)
+    // 测试$emmit函数被正确触发
+    // mock函数替代点击按钮后$emit的函数，此处函数名相同，依然为click
+    const mockFn1 = jest.fn()
+    wrapper.vm.$on('click', mockFn1)
+    // 测试mock函数是否被触发，触发的次数,以及参数
+    wrapper.vm.onClick()
+    expect(mockFn1).toBeCalled()
+    expect(mockFn1).toHaveBeenCalledTimes(1)
+    expect(mockFn1).toHaveBeenCalledWith('i am params')
+    // 第二次点击button，依然测试mock函数是否被触发，触发的次数
+    wrapper.vm.onClick()
+    expect(mockFn1).toBeCalled()
+    expect(mockFn1).toHaveBeenCalledTimes(2)
+    expect(mockFn1).toHaveBeenCalledWith('i am params')
+
+    wrapper.destroy()
+  })
+
+  // 测试内容：slots 普通插槽
+  // 测试默认值
+  it('slots default value test', () =&gt; {
+    const wrapper = shallowMount(AppButton)
+    const button = wrapper.find('button')
+    expect(button.text()).toBe('submit')
+    wrapper.destroy()
+  })
+
+  // 测试内容：slots 普通插槽
+  // mount时传入自定义的内容作为slots，然后再断言自定义的内容存在与否
+  // 自定义的内容可能会是text，html，componets等允许的内容
+  it('slots test', () =&gt; {
+    const wrapper = shallowMount(AppButton, {
+      slots: {
+        default: 'i am slots text' // 自定义slots内容
+      }
+    })
+    const button = wrapper.find('button')
+    expect(button.text()).toBe('i am slots text')
+
+    wrapper.destroy()
+  })
+
+  // 测试内容：slots具名插槽-&gt;vue2.6更新后的新语法v-slots，3.0中会延续使用，并废除旧语法（在此提醒注意，不影响测试代码的书写）
+  // 测试方法与slots普通插槽相同，此处传入为html,
+  // 当传入组件时，只需断言wrapper中是否包含组件的DOM元素即可
+  // expect(wrapper.contains('.container')).toBe(true)
+  it('named slots test', () =&gt; {
+    const wrapper = shallowMount(AppButton, {
+      slots: {
+        namedSlot: `&lt;span&gt;i am slots html&lt;/span&gt;` // 自定义slots内容
+      }
+    })
+    const button = wrapper.find('button')
+    expect(button.contains('span')).toBe(true)
+    const span = wrapper.find('button span')
+    expect(span.text()).toBe('i am slots html')
+
+    wrapper.destroy()
+  })
+
+  // 测试内容：slots作用域插槽-&gt;vue2.6更新后的新语法v-slots，3.0中会延续使用，并废除旧语法（在此提醒注意，不影响测试代码的书写）
+  // 测试方法与slots具名插槽相同，此处传入为html,
+  // 当传入组件时，只需断言wrapper中是否包含组件的DOM元素即可
+  // expect(wrapper.contains('.container')).toBe(true)
+  it('scoped slots test', () =&gt; {
+    const wrapper = shallowMount(AppButton, {
+      scopedSlots: {
+        scopedSlot: `&lt;span slot-scope=&quot;foo&quot;&gt;{{ foo.user.lastName }}&lt;/span&gt;` // 自定义slots内容
+      }
+    })
+    const button = wrapper.find('button')
+    expect(button.contains('span')).toBe(true)
+    const span = wrapper.find('button span')
+    expect(span.text()).toBe('holy')
+
+    wrapper.destroy()
+  })
+
+  // 测试内容：精准DOM结构测试示例
+  it('DOM test', () =&gt; {
+    const wrapper = shallowMount(AppButton)
+    expect(wrapper.contains('button')).toBeTruthy()
+    wrapper.destroy()
+  })
+
+  // 测试内容：snapshot-&gt;概括的测试DOM结构
+  // 如果组件内存在比较特殊的需要测试的DOM结构的话，可以单独测试
+  it('matches snapshot', () =&gt; {
+    const wrapper = shallowMount(AppButton)
+    expect(wrapper.html()).toMatchSnapshot()
+    wrapper.destroy()
+  })
+})
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/test/unitTest.html" class="prev">
+        单元测试原则
+      </a></span> <span class="next"><a href="/pages/test/tdd.html">
+        tdd导览
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.edd0e32f.js" defer></script><script src="/assets/js/2.6ad20504.js" defer></script><script src="/assets/js/17.0a5440b4.js" defer></script>
+  </body>
+</html>

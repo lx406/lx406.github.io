@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>不稳定排序 | Xiang&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.35bcedcf.css" as="style"><link rel="preload" href="/assets/js/app.edd0e32f.js" as="script"><link rel="preload" href="/assets/js/2.6ad20504.js" as="script"><link rel="preload" href="/assets/js/13.fc3d457f.js" as="script"><link rel="prefetch" href="/assets/js/10.83ad3917.js"><link rel="prefetch" href="/assets/js/11.ce94b172.js"><link rel="prefetch" href="/assets/js/12.7e578634.js"><link rel="prefetch" href="/assets/js/14.163e86a2.js"><link rel="prefetch" href="/assets/js/15.f3f5df27.js"><link rel="prefetch" href="/assets/js/16.d6352424.js"><link rel="prefetch" href="/assets/js/17.0a5440b4.js"><link rel="prefetch" href="/assets/js/18.87707989.js"><link rel="prefetch" href="/assets/js/3.4f772477.js"><link rel="prefetch" href="/assets/js/4.a04b886e.js"><link rel="prefetch" href="/assets/js/5.cf097153.js"><link rel="prefetch" href="/assets/js/6.9e2bed46.js"><link rel="prefetch" href="/assets/js/7.5f808fab.js"><link rel="prefetch" href="/assets/js/8.3da66210.js"><link rel="prefetch" href="/assets/js/9.bff0ee0e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35bcedcf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/qianduaner.jpeg" alt="Xiang's Blog" class="logo"> <span class="site-name can-hide">Xiang's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/pages/es6/symbol.html" class="nav-link">
+  es6
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="test menu" class="dropdown-title"><span class="title">test</span> <span class="arrow down"></span></button> <button type="button" aria-label="test menu" class="mobile-dropdown-title"><span class="title">test</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/test/test.html" class="nav-link">
+  test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/unitTest.html" class="nav-link">
+  unit test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/test-utils.html" class="nav-link">
+  @vue/test-utils
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/tdd.html" class="nav-link">
+  tdd
+</a></li></ul></div></div><div class="nav-item"><a href="/pages/browser/浏览器工作原理.html" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/pages/algorithm/stableSort.html" class="nav-link">
+  algorithm
+</a></div><div class="nav-item"><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/pages/es6/symbol.html" class="nav-link">
+  es6
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="test menu" class="dropdown-title"><span class="title">test</span> <span class="arrow down"></span></button> <button type="button" aria-label="test menu" class="mobile-dropdown-title"><span class="title">test</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/test/test.html" class="nav-link">
+  test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/unitTest.html" class="nav-link">
+  unit test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/test-utils.html" class="nav-link">
+  @vue/test-utils
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/tdd.html" class="nav-link">
+  tdd
+</a></li></ul></div></div><div class="nav-item"><a href="/pages/browser/浏览器工作原理.html" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/pages/algorithm/stableSort.html" class="nav-link">
+  algorithm
+</a></div><div class="nav-item"><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/pages/algorithm/stableSort.html" class="sidebar-link">稳定排序</a></li><li><a href="/pages/algorithm/unStableSort.html" aria-current="page" class="active sidebar-link">不稳定排序</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/algorithm/unStableSort.html#选择排序" class="sidebar-link">选择排序</a></li><li class="sidebar-sub-header"><a href="/pages/algorithm/unStableSort.html#快速排序" class="sidebar-link">快速排序</a></li><li class="sidebar-sub-header"><a href="/pages/algorithm/unStableSort.html#希尔排序" class="sidebar-link">希尔排序</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="不稳定排序"><a href="#不稳定排序" class="header-anchor">#</a> 不稳定排序</h1> <h2 id="选择排序"><a href="#选择排序" class="header-anchor">#</a> 选择排序</h2> <div class="language- extra-class"><pre class="language-text"><code>/**
+ * 直接选择排序
+ * 从无序的数组中取出最小的数与第一个元素交换
+ * 不稳定排序
+ * 输入[5,8,6,2,3,1,4,7]
+ * 输出[1,2,3,4,5,6,7,8]
+ * 时间复杂度O(n2)
+ * 平均空间复杂度O
+ */
+
+function selectionSort(arr) {
+  let j = 0;
+  while (j &lt; arr.length) {
+    let min = arr[j]
+    let index = j
+    for (let i = j + 1; i &lt; arr.length; i++) {
+      if (arr[i] &lt; min) {
+        min = arr[i]
+        index = i
+      }
+    }
+    [arr[j], arr[index]] = [arr[index], arr[j]]
+    j++
+  }
+}
+
+let arr2 = [5, 8, 6, 2, 3, 1, 4, 7]
+selectionSort(arr2)
+console.log(arr2)
+</code></pre></div><h2 id="快速排序"><a href="#快速排序" class="header-anchor">#</a> 快速排序</h2> <div class="language- extra-class"><pre class="language-text"><code>/**
+ * 快速排序
+ * 选择其中一个元素作为基数，并从两侧向里遍历，大于元素则放在元素右侧，反之放到左侧，并递归直至长度为1
+ * 不稳定排序
+ * 输入[5,8,6,2,3,1,4,7]
+ * 输出[1,2,3,4,5,6,7,8]
+ * 时间复杂度O(nlogn)
+ */
+
+function quickSort(arr) {
+  sort(arr, 0, arr.length - 1)
+}
+
+function sort(arr, left, right) {
+  let baseNum = arr[left] // 基数
+  let leftIndex = left // 左指针
+  let rightIndex = right // 右指针
+  if (left &lt; right) {
+    while (leftIndex !== rightIndex) {
+      while (leftIndex &lt; rightIndex &amp;&amp; arr[rightIndex] &gt; baseNum) {
+        rightIndex--
+      }
+      arr[leftIndex] = arr[rightIndex]
+      while (leftIndex &lt; rightIndex &amp;&amp; arr[leftIndex] &lt; baseNum) {
+        leftIndex++
+      }
+      arr[rightIndex] = arr[leftIndex]
+    }
+    arr[leftIndex] = baseNum
+    sort(arr, left, leftIndex - 1)
+    sort(arr, leftIndex + 1, right)
+  }
+}
+
+let arr2 = [5, 8, 6, 2, 3, 1, 4, 7]
+quickSort(arr2)
+console.log(arr2)
+</code></pre></div><h2 id="希尔排序"><a href="#希尔排序" class="header-anchor">#</a> 希尔排序</h2> <div class="language- extra-class"><pre class="language-text"><code>/**
+ * 希尔排序
+ * 从大间隔向小间隔逐次遍历
+ * 不稳定排序
+ * 输入[5,8,6,2,3,1,4,7]
+ * 输出[1,2,3,4,5,6,7,8]
+ * 时间复杂度（nlog2n）
+ */
+
+// 第一遍：gap = 4 ; 3,1,4,2,5,8,6,7
+// 第二遍：gap = 2 ; 3,1,4,2,5,8,6,7
+// 第三遍: gap = 1 ; 1,2,3,4,5,6,7,8
+
+function shellSort(arr) {
+  // 第一步找间隔
+  let gap = parseInt(arr.length / 2)
+  // 选定gap
+  for (gap; gap &gt; 0; gap = parseInt(gap / 2)) {
+    // 从gap个元素开始比较
+    for (let i = gap; i &lt; arr.length; i++) {
+      let j = i
+      let current = arr[i]
+      while (j - gap &gt;= 0 &amp;&amp; arr[j - gap] &gt; current) {
+        arr[j] = arr[j-gap]
+        j = j - gap 
+      }
+      arr[j] = current
+    }
+  }
+}
+
+let arr2 = [5, 8, 6, 2, 3, 1, 4, 7]
+shellSort(arr2)
+console.log(arr2)
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/algorithm/stableSort.html" class="prev">
+        稳定排序
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.edd0e32f.js" defer></script><script src="/assets/js/2.6ad20504.js" defer></script><script src="/assets/js/13.fc3d457f.js" defer></script>
+  </body>
+</html>

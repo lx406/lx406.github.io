@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>变量的解构赋值 | Xiang&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.35bcedcf.css" as="style"><link rel="preload" href="/assets/js/app.edd0e32f.js" as="script"><link rel="preload" href="/assets/js/2.6ad20504.js" as="script"><link rel="preload" href="/assets/js/16.d6352424.js" as="script"><link rel="prefetch" href="/assets/js/10.83ad3917.js"><link rel="prefetch" href="/assets/js/11.ce94b172.js"><link rel="prefetch" href="/assets/js/12.7e578634.js"><link rel="prefetch" href="/assets/js/13.fc3d457f.js"><link rel="prefetch" href="/assets/js/14.163e86a2.js"><link rel="prefetch" href="/assets/js/15.f3f5df27.js"><link rel="prefetch" href="/assets/js/17.0a5440b4.js"><link rel="prefetch" href="/assets/js/18.87707989.js"><link rel="prefetch" href="/assets/js/3.4f772477.js"><link rel="prefetch" href="/assets/js/4.a04b886e.js"><link rel="prefetch" href="/assets/js/5.cf097153.js"><link rel="prefetch" href="/assets/js/6.9e2bed46.js"><link rel="prefetch" href="/assets/js/7.5f808fab.js"><link rel="prefetch" href="/assets/js/8.3da66210.js"><link rel="prefetch" href="/assets/js/9.bff0ee0e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35bcedcf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/qianduaner.jpeg" alt="Xiang's Blog" class="logo"> <span class="site-name can-hide">Xiang's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/pages/es6/symbol.html" class="nav-link">
+  es6
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="test menu" class="dropdown-title"><span class="title">test</span> <span class="arrow down"></span></button> <button type="button" aria-label="test menu" class="mobile-dropdown-title"><span class="title">test</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/test/test.html" class="nav-link">
+  test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/unitTest.html" class="nav-link">
+  unit test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/test-utils.html" class="nav-link">
+  @vue/test-utils
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/tdd.html" class="nav-link">
+  tdd
+</a></li></ul></div></div><div class="nav-item"><a href="/pages/browser/浏览器工作原理.html" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/pages/algorithm/stableSort.html" class="nav-link">
+  algorithm
+</a></div><div class="nav-item"><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/pages/es6/symbol.html" class="nav-link">
+  es6
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="test menu" class="dropdown-title"><span class="title">test</span> <span class="arrow down"></span></button> <button type="button" aria-label="test menu" class="mobile-dropdown-title"><span class="title">test</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/test/test.html" class="nav-link">
+  test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/unitTest.html" class="nav-link">
+  unit test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/test-utils.html" class="nav-link">
+  @vue/test-utils
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/tdd.html" class="nav-link">
+  tdd
+</a></li></ul></div></div><div class="nav-item"><a href="/pages/browser/浏览器工作原理.html" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/pages/algorithm/stableSort.html" class="nav-link">
+  algorithm
+</a></div><div class="nav-item"><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/pages/es6/symbol.html" class="sidebar-link">Symbol</a></li><li><a href="/pages/es6/变量的结构赋值.html" class="active sidebar-link">变量的解构赋值</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/es6/变量的结构赋值.html#变量的解构赋值" class="sidebar-link">变量的解构赋值</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="变量的解构赋值"><a href="#变量的解构赋值" class="header-anchor">#</a> 变量的解构赋值</h2> <p>解构赋值的规则：只要等号右边的值不是对象或者数组，就先将其转化为对象。由于undefined和null不能转化为对象，所以对它们进行解构赋值，都会报错。</p> <h3 id="数组的解构赋值"><a href="#数组的解构赋值" class="header-anchor">#</a> 数组的解构赋值</h3> <ol><li>模式匹配：只要等号两边的模式相同，左边就会被赋予对应的值。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>//es5
+let a = 1;
+let b = 2;
+let c = 3;
+
+// es6
+let [a,b,c] = [1,2,3];
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>let [head, ...tail] = [1,2,3,4];
+head // 1
+tail // [2,3,4]
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>let [x,y,...z] = ['a'];
+x // 'a'
+y // undefined(如果结构不成功，变量的值为undefined)
+z // []
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// 不完全解构
+let [a,b] = [1,2,3];
+a // 1
+b // 2
+// 不完全解构也能成功
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// 如果右侧不是数组,都会报错，其实这里说是数组不够准确，应该是没有interator接口的结构
+let [foo] = 1;
+let [foo] = false;
+let [foo] = NaN;
+let [foo] = undefined;
+let [foo] = null;
+let [foo] = {};
+// 这里先简单介绍下，支持interator接口的结构：数组、类数组对象、Set和Map
+let [a,b,c] = new Set([1,2,3]);
+a // 1
+b // 2
+c // 3
+// 只要是具有interator接口，都可以采取数组形式解构赋值
+function* fibs() {
+  let a = 0;
+  let b = 1;
+  while (true) {
+    yield a;
+    [a, b] = [b, a + b];
+  }
+}
+
+let [first, second, third, fourth, fifth, sixth] = fibs();
+sixth // 5
+</code></pre></div><ol start="2"><li>默认值</li></ol> <div class="language- extra-class"><pre class="language-text"><code>let [a = 1] = [2];
+a // 2
+let [a = 1] = [undefined];
+a // 1
+let [a = 1] = [null];
+a // null
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// 如果默认值为函数，则函数是惰性执行的，即如果取默认值才会执行
+function f() {
+  console.log('aaa');
+}
+
+let [x = f()] = [1];
+
+// 等价于
+let x;
+if ([1][0] === undefined) {
+  x = f();
+} else {
+  x = [1][0];
+}
+</code></pre></div><h3 id="对象的解构赋值"><a href="#对象的解构赋值" class="header-anchor">#</a> 对象的解构赋值</h3> <ol><li>对象解构与数组解构的不同</li></ol> <div class="language- extra-class"><pre class="language-text"><code>// 数组内部是有顺序的，所以是按照位置解构的；而对象内没有顺序，所以要对应key来解构
+let {foo, zoo} = {foo:1, zoo:2};
+foo // 1
+zoo // 2
+
+// 其实上面的代码为下面代码的简写,
+let {foo:foo, zoo:zoo} = {foo:1, zoo:2};
+
+// 所以说真正赋值的是冒号右侧变量
+let {foo: baz} = {foo:1, zoo:2};
+baz // 1
+foo // error
+</code></pre></div><ol start="2"><li>对象也可嵌套赋值</li></ol> <div class="language- extra-class"><pre class="language-text"><code>// 这里loc和start均是模式，只有line是变量；模式即为等式左右两边用来对应的，而变量才是真正定义赋值的
+var node = {
+  loc: {
+    start: {
+      line: 1,
+      column: 5
+    }
+  }
+};
+
+var { loc: { start: { line }} } = node;
+line // 1
+loc  // error: loc is undefined
+start // error: start is undefined
+</code></pre></div><ol start="3"><li>对象解构也可定义默认值</li></ol> <div class="language- extra-class"><pre class="language-text"><code>// 和数组一样，只有赋的值 === undefined，才取默认值
+var {x = 3} = {x: undefined};
+x // 3
+
+var {x = 3} = {x: null};
+x // null
+</code></pre></div><ol start="4"><li>对象解构的巧用</li></ol> <div class="language- extra-class"><pre class="language-text"><code>// 将现有对象方法，赋值到某个变量上
+let {log, sin, cos} = Math;
+</code></pre></div><h3 id="字符串的解构赋值"><a href="#字符串的解构赋值" class="header-anchor">#</a> 字符串的解构赋值</h3> <div class="language- extra-class"><pre class="language-text"><code>// 字符串被转换成了一个类似数组的对象
+let [a,b,c,d,e] = 'hello'
+a // 'h'
+b // 'e'
+
+// 类似数组的对象中有length属性，所以还可以按照对象解构，定义len
+let {length: len} = 'hello';
+len // 5
+</code></pre></div><h3 id="数值与布尔的解构赋值"><a href="#数值与布尔的解构赋值" class="header-anchor">#</a> 数值与布尔的解构赋值</h3> <div class="language- extra-class"><pre class="language-text"><code>let {toString: s} = 123;
+s === Number.prototype.toString // true
+
+let {toString: s} = true;
+s === Boolean.prototype.toString // true
+</code></pre></div><h3 id="函数参数的解构赋值"><a href="#函数参数的解构赋值" class="header-anchor">#</a> 函数参数的解构赋值</h3> <div class="language- extra-class"><pre class="language-text"><code>function add([x, y]){
+  return x + y;
+}
+
+add([1, 2]); // 3
+</code></pre></div><h3 id="圆括号问题"><a href="#圆括号问题" class="header-anchor">#</a> 圆括号问题</h3> <p>解构时，一定不要在模式上加();</p> <h3 id="解构的用途"><a href="#解构的用途" class="header-anchor">#</a> 解构的用途</h3> <ol><li>交换变量的值</li></ol> <div class="language- extra-class"><pre class="language-text"><code>let x = 1;
+let y = 2;
+[x, y] = [y, x];
+x // 2;
+y // 1;
+</code></pre></div><ol start="2"><li>从函数返回多个值</li></ol> <div class="language- extra-class"><pre class="language-text"><code>let a = function(){
+    return [1,2,3];
+}
+let [b,c,d] = a();
+
+let fn = function(){
+    return {
+        foo: 'foo',
+        zoo: 'zoo'
+    }
+}
+let {foo, zoo} = fn();
+</code></pre></div><ol start="3"><li>函数参数的定义</li></ol> <div class="language- extra-class"><pre class="language-text"><code>// 参数是一组有次序的值
+function f([x, y, z]) { ... }
+f([1, 2, 3]);
+
+// 参数是一组无次序的值
+function f({x, y, z}) { ... }
+f({z: 3, y: 2, x: 1});
+</code></pre></div><ol start="4"><li>提取JSON数据</li></ol> <div class="language- extra-class"><pre class="language-text"><code>let jsonData = {
+  id: 42,
+  status: &quot;OK&quot;,
+  data: [867, 5309]
+};
+
+let { id, status, data: number } = jsonData;
+
+console.log(id, status, number);
+// 42, &quot;OK&quot;, [867, 5309]
+</code></pre></div><ol start="5"><li>函数参数的默认值</li></ol> <div class="language- extra-class"><pre class="language-text"><code>let a = function(b=2){}
+// 指定参数的默认值，就避免了在函数体内部再写var foo = config.foo || 'default foo';这样的语句。
+</code></pre></div><ol start="6"><li>遍历Map解构</li></ol> <div class="language- extra-class"><pre class="language-text"><code>// 因为Map提供了interator接口，所以可以使用for...of循环遍历，并且使用解构赋值。这样Map遍历就会变的非常简便
+let a = new Map();
+a.set('first', 'hello');
+a.set('second','world');
+
+for(let [key, value] of a){
+    console.log(`${key} is ${value}`)
+}
+// 还可以单独取key或者value
+
+for(let [key] of a){}
+for(let [,value] of a){}
+</code></pre></div><ol start="7"><li>输入模块的指定方法</li></ol> <div class="language- extra-class"><pre class="language-text"><code>// 加载模块时，往往需要指定输入哪些方法。解构赋值使得输入语句非常清晰。
+const { SourceMapConsumer, SourceNode } = require(&quot;source-map&quot;);
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/es6/symbol.html" class="prev">
+        Symbol
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.edd0e32f.js" defer></script><script src="/assets/js/2.6ad20504.js" defer></script><script src="/assets/js/16.d6352424.js" defer></script>
+  </body>
+</html>

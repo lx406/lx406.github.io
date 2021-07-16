@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>浏览器工作原理 | Xiang&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.35bcedcf.css" as="style"><link rel="preload" href="/assets/js/app.edd0e32f.js" as="script"><link rel="preload" href="/assets/js/2.6ad20504.js" as="script"><link rel="preload" href="/assets/js/7.5f808fab.js" as="script"><link rel="prefetch" href="/assets/js/10.83ad3917.js"><link rel="prefetch" href="/assets/js/11.ce94b172.js"><link rel="prefetch" href="/assets/js/12.7e578634.js"><link rel="prefetch" href="/assets/js/13.fc3d457f.js"><link rel="prefetch" href="/assets/js/14.163e86a2.js"><link rel="prefetch" href="/assets/js/15.f3f5df27.js"><link rel="prefetch" href="/assets/js/16.d6352424.js"><link rel="prefetch" href="/assets/js/17.0a5440b4.js"><link rel="prefetch" href="/assets/js/18.87707989.js"><link rel="prefetch" href="/assets/js/3.4f772477.js"><link rel="prefetch" href="/assets/js/4.a04b886e.js"><link rel="prefetch" href="/assets/js/5.cf097153.js"><link rel="prefetch" href="/assets/js/6.9e2bed46.js"><link rel="prefetch" href="/assets/js/8.3da66210.js"><link rel="prefetch" href="/assets/js/9.bff0ee0e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35bcedcf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/qianduaner.jpeg" alt="Xiang's Blog" class="logo"> <span class="site-name can-hide">Xiang's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/pages/es6/symbol.html" class="nav-link">
+  es6
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="test menu" class="dropdown-title"><span class="title">test</span> <span class="arrow down"></span></button> <button type="button" aria-label="test menu" class="mobile-dropdown-title"><span class="title">test</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/test/test.html" class="nav-link">
+  test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/unitTest.html" class="nav-link">
+  unit test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/test-utils.html" class="nav-link">
+  @vue/test-utils
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/tdd.html" class="nav-link">
+  tdd
+</a></li></ul></div></div><div class="nav-item"><a href="/pages/browser/浏览器工作原理.html" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/pages/algorithm/stableSort.html" class="nav-link">
+  algorithm
+</a></div><div class="nav-item"><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/pages/es6/symbol.html" class="nav-link">
+  es6
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="test menu" class="dropdown-title"><span class="title">test</span> <span class="arrow down"></span></button> <button type="button" aria-label="test menu" class="mobile-dropdown-title"><span class="title">test</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/test/test.html" class="nav-link">
+  test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/unitTest.html" class="nav-link">
+  unit test
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/test-utils.html" class="nav-link">
+  @vue/test-utils
+</a></li><li class="dropdown-item"><!----> <a href="/pages/test/tdd.html" class="nav-link">
+  tdd
+</a></li></ul></div></div><div class="nav-item"><a href="/pages/browser/浏览器工作原理.html" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/pages/algorithm/stableSort.html" class="nav-link">
+  algorithm
+</a></div><div class="nav-item"><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/pages/browser/浏览器工作原理.html" class="active sidebar-link">浏览器工作原理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/browser/浏览器工作原理.html#进程与线程" class="sidebar-link">进程与线程</a></li><li class="sidebar-sub-header"><a href="/pages/browser/浏览器工作原理.html#浏览器进化史" class="sidebar-link">浏览器进化史</a></li></ul></li><li><a href="/pages/browser/http&amp;tcp.html" class="sidebar-link">http</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="浏览器工作原理"><a href="#浏览器工作原理" class="header-anchor">#</a> 浏览器工作原理</h1> <p><img src="/assets/img/process.609c3d22.png" alt="image">
+当我们打开浏览器，观察任务管理器时，可以看到浏览器当前有4个进程，分别是主进程、网络进程、GPU进程、渲染进程。那么浏览器为什么要分成这么多进程呢，我们先从进程与线程说起。</p> <h2 id="进程与线程"><a href="#进程与线程" class="header-anchor">#</a> 进程与线程</h2> <h3 id="进程"><a href="#进程" class="header-anchor">#</a> 进程</h3> <p>运行程序时，操作系统会为该程序创建一块内存，用来存放代码、运行中的数据以及一个执行任务的主线程，这样的运行环境叫做进程</p> <h3 id="线程"><a href="#线程" class="header-anchor">#</a> 线程</h3> <p>线程依附于进程，多线程可并行处理提高运算效率。</p> <h3 id="两者间特点"><a href="#两者间特点" class="header-anchor">#</a> 两者间特点</h3> <ol><li>进程中任一线程出错，都会导致整个进程崩溃</li> <li>线程之间共享进程数据</li> <li>进程关闭后，操作系统会回收进程内存</li> <li>进程间相互隔离</li></ol> <h2 id="浏览器进化史"><a href="#浏览器进化史" class="header-anchor">#</a> 浏览器进化史</h2> <h3 id="单线程浏览器"><a href="#单线程浏览器" class="header-anchor">#</a> 单线程浏览器</h3> <p>所有功能都运行在一个进程里。</p> <p>这样会导致浏览器不稳定、不流畅、不安全</p> <ol><li>不稳定：插件以及渲染引擎都不稳定，一旦崩溃整个浏览器都会崩溃</li> <li>不流畅：javascript执行环境也都在一起，如何某些代码影响了执行效率，整个浏览器都变得卡顿</li> <li>不安全：运行插件时获取系统权限，释放病毒、窃取账号密码等</li></ol> <h3 id="多线程浏览器"><a href="#多线程浏览器" class="header-anchor">#</a> 多线程浏览器</h3> <p>分成浏览器进程、渲染进程、网络进程、GPU进程、插件进程</p> <p>这样可以很好地避免了不稳定、不流畅、不安全的问题</p> <p>但出现了两个问题：</p> <ol><li>更高的资源占用：每个进程都会包含公共基础结构副本</li> <li>更复杂的体系架构</li></ol> <h3 id="面向服务架构soa"><a href="#面向服务架构soa" class="header-anchor">#</a> 面向服务架构SOA</h3> <p>将公共基础结构分成多个服务，每个服务在独立进程里运行，通过协议接口等方式进行通信，进行解耦。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/pages/browser/http&amp;tcp.html">
+        http
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.edd0e32f.js" defer></script><script src="/assets/js/2.6ad20504.js" defer></script><script src="/assets/js/7.5f808fab.js" defer></script>
+  </body>
+</html>
